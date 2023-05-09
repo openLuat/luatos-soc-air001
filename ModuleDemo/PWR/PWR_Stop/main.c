@@ -1,0 +1,89 @@
+#include "main.h"
+static void RCC_Configuration(void);  // 配置时钟
+static void GPIO_Configuration(void); // 配置GPIO
+
+int main(void)
+{
+  /* 配置系统时钟 */
+  RCC_Configuration();
+  // 配置SysTick
+  LL_Init1msTick(SystemCoreClock);
+  // GPIO初始化
+  GPIO_Configuration();
+
+  // 等待按键按下
+  while (LL_GPIO_IsInputPinSet(GPIOF, LL_GPIO_PIN_4) == 0)
+  {
+  }
+  // 关闭GPIOB0
+  LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_0);
+  LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR); // 使能PWR时钟
+  LL_PWR_EnableLowPowerRunMode();                    // 使能低功耗运行模式
+
+  LL_LPM_EnableDeepSleep(); // 进入STOP模式，等待中断唤醒
+  __WFI();                  // 进入低功耗模式
+  while (1)
+  {
+    LL_GPIO_TogglePin(GPIOB, LL_GPIO_PIN_0); // 翻转LED
+    LL_mDelay(500);
+  }
+}
+
+// 初始化GPIO
+static void GPIO_Configuration(void)
+{
+  // 使能GPIOB时钟
+  LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOB);
+  LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOF);
+  // 开发板上中间的灯连接在PB0，初始化PB0为推挽输出
+  LL_GPIO_SetPinMode(GPIOB, LL_GPIO_PIN_0, LL_GPIO_MODE_OUTPUT);
+  // GPIOB0输出高电平
+  LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_0);
+  // 初始化PF4为输入，外部有下拉电阻
+  LL_GPIO_SetPinMode(GPIOF, LL_GPIO_PIN_4, LL_GPIO_MODE_INPUT);
+
+  LL_EXTI_InitTypeDef EXTI_InitStruct;              // 外部中断结构体
+  EXTI_InitStruct.Line = LL_EXTI_LINE_4;            // 外部中断线
+  EXTI_InitStruct.LineCommand = ENABLE;             // 使能外部中断线
+  EXTI_InitStruct.Mode = LL_EXTI_MODE_IT;           // 中断模式
+  EXTI_InitStruct.Trigger = LL_EXTI_TRIGGER_RISING; // 上升沿触发
+  LL_EXTI_Init(&EXTI_InitStruct);                   // 初始化外部中断
+  LL_EXTI_EnableIT(LL_EXTI_LINE_4);                 // 使能外部中断
+
+  LL_EXTI_SetEXTISource(LL_EXTI_CONFIG_PORTF, LL_EXTI_CONFIG_LINE4); // 设置外部中断线的源为PF4
+  NVIC_SetPriority(EXTI4_15_IRQn, 1);                                // 设置中断优先级
+  NVIC_EnableIRQ(EXTI4_15_IRQn);                                     // 使能中断
+}
+// 外部中断服务函数
+void EXTI4_15_IRQHandler(void)
+{
+  if (LL_EXTI_IsActiveFlag(LL_EXTI_LINE_4)) // 判断中断来源
+  {
+    LL_EXTI_ClearFlag(LL_EXTI_LINE_4); // 清空中断标志
+  }
+}
+static void RCC_Configuration(void)
+{
+  LL_RCC_HSI_Enable();                                  // 使能HSI
+  LL_RCC_HSI_SetCalibFreq(LL_RCC_HSICALIBRATION_24MHz); // 设置HSI为24MHz
+  while (LL_RCC_HSI_IsReady() != 1)                     // 等待HSI就绪
+  {
+  }
+  LL_RCC_SetAHBPrescaler(LL_RCC_SYSCLK_DIV_1);                           // 设置AHB分频
+  LL_RCC_SetSysClkSource(LL_RCC_SYS_CLKSOURCE_HSISYS);                   // 设置系统时钟源为HSI
+  while (LL_RCC_GetSysClkSource() != LL_RCC_SYS_CLKSOURCE_STATUS_HSISYS) // 等待系统时钟源切换为HSI
+  {
+  }
+  LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_1); // 设置APB1分频
+
+  SystemCoreClockUpdate(); // 更新系统时钟，更新后的系统时钟存放在SystemCoreClock中
+}
+
+// 以下为错误处理函数
+void APP_ErrorHandler(void)
+{
+  // 死等
+  while (1)
+  {
+  }
+}
