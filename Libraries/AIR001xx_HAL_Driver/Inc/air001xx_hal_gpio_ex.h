@@ -50,7 +50,7 @@ extern "C" {
   * @{
   */
 /*------------------------- AIR001xx ------------------------*/
-#if (defined(AIR00103PRE)|| defined(AIR00130PRE) || defined(ARDUINO_AIR001_DEV))
+#if (defined(AIR00103PRE)|| defined(AIR00130PRE) || defined(AIR001_DEV))
 /**
   * @brief   AF 0 selection
   */
