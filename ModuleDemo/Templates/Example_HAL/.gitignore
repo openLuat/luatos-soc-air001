@@ -1,0 +1,96 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+.vscode/
+*.rar
+*.o
+*.d
+*.crf
+*.htm
+*.dep
+*.map
+*.bak
+*.lnp
+*.lst
+*.ini
+*.iex
+*.sct
+*.scvd
+*.uvguix
+*.dbg*
+*.uvguix.*
+.mxproject
+*.uvguit
+*.uvgui.*
+
+RTE/
+Templates/
+Examples/
+
+!*.uvoptx
+!*.h
+!*.c
+!*.ioc
+!*.axf
+!*.bin
+!*.hex
+
+JlinkLog.txt
+*.axf
+
+*.hex
+
+Listings/*
+
+Objects/*
+*.uvoptx
