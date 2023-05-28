@@ -1,4 +1,4 @@
-#include "air001_Core_Board.c.h"
+#include "air001_Core_Board.h"
 
 #define __AIR001_CORE_BOARD_BSP_VERSION_MAIN (0x01U) /*!< [31:24] main version */
 #define __AIR001_CORE_BOARD_BSP_VERSION_SUB1 (0x00U) /*!< [23:16] sub1 version */
@@ -9,7 +9,7 @@
 #ifdef HAL_UART_MODULE_ENABLED
 UART_HandleTypeDef DebugUartHandle;
 #endif
-GPIO_TypeDef *LED_PORT[LEDn] = {LED_GPIO_PORT};
+GPIO_TypeDef *LED_PORT[LEDn] = {LED1_GPIO_PORT};
 const uint16_t LED_PIN[LEDn] = {LED1_PIN};
 
 GPIO_TypeDef *BUTTON_PORT[BUTTONn] = {USER_BUTTON_GPIO_PORT};

@@ -7,7 +7,7 @@ extern "C"
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "air001_hal.h"
+#include "air001xx_hal.h"
 
   /** @addtogroup BSP
    * @{
