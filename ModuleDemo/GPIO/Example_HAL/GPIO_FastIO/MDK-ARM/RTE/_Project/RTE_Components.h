@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'GPIO_OUT' 
- * Target:  'GPIO_OUT' 
+ * Project: 'Project' 
+ * Target:  'Project' 
  */
 
 #ifndef RTE_COMPONENTS_H
