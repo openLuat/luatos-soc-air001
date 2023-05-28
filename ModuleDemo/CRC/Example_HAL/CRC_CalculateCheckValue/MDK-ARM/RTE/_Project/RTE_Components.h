@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'CRC_Check' 
- * Target:  'CRC_Check' 
+ * Project: 'Project' 
+ * Target:  'Project' 
  */
 
 #ifndef RTE_COMPONENTS_H

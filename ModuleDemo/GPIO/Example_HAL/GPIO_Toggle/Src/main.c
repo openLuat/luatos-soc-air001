@@ -60,7 +60,7 @@ static void APP_GpioConfig(void)
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
-  __HAL_RCC_GPIOB_CLK_ENABLE();                          /* 使能GPIOA时钟 */
+  __HAL_RCC_GPIOB_CLK_ENABLE();                          /* 使能GPIOB时钟 */
 
   GPIO_InitStruct.Pin = GPIO_PIN_1;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;            /* 推挽输出 */

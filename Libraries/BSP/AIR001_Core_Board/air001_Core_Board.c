@@ -85,7 +85,7 @@ void BSP_LED_DeInit(Led_TypeDef Led)
  */
 void BSP_LED_On(Led_TypeDef Led)
 {
-  HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_SET);
 }
 
 /**
@@ -97,7 +97,7 @@ void BSP_LED_On(Led_TypeDef Led)
  */
 void BSP_LED_Off(Led_TypeDef Led)
 {
-  HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_RESET);
 }
 
 /**
