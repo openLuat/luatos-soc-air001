@@ -54,7 +54,7 @@ void BSP_LED_Init(Led_TypeDef Led)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 
   HAL_GPIO_Init(LED_PORT[Led], &GPIO_InitStruct);
-  HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_RESET);
 }
 
 /**
