@@ -31,7 +31,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "air001xx_hal.h"
-#include "air001_core_board.h"
+#include "air001_Core_Board.h"
 #include <stdbool.h>
 /* Private includes ----------------------------------------------------------*/
 /* Private defines -----------------------------------------------------------*/
