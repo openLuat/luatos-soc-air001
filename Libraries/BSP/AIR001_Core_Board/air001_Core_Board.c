@@ -144,7 +144,7 @@ void BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
   if (ButtonMode == BUTTON_MODE_EXTI)
   {
     /* 配置为上升沿中断 */
-    gpioinitstruct.Mode = EXTI_TRIGGER_RISING;
+    gpioinitstruct.Mode = GPIO_MODE_IT_RISING;
     HAL_GPIO_Init(BUTTON_PORT[Button], &gpioinitstruct);
 
     /* Enable and set Button EXTI Interrupt to the lowest priority */
