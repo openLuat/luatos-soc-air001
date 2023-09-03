@@ -1,8 +1,9 @@
 /**
   ******************************************************************************
-  * @file    air001xx_it.h
+  * @file    main.h
   * @author  MCU Application Team
-  * @brief   This file contains the headers of the interrupt handlers.
+  * @brief   Header for main.c file.
+  *          This file contains the common defines of the application.
   ******************************************************************************
   * @attention
   *
@@ -20,32 +21,39 @@
   ******************************************************************************
   */
 
-
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __AIR001XX_IT_H
-#define __AIR001XX_IT_H
+#ifndef __MAIN_H
+#define __MAIN_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/* Private includes ----------------------------------------------------------*/
-/* Exported types ------------------------------------------------------------*/
-/* Exported constants --------------------------------------------------------*/
-/* Exported macro ------------------------------------------------------------*/
-/* Exported functions prototypes ---------------------------------------------*/
-void NMI_Handler(void);
-void HardFault_Handler(void);
-void SVC_Handler(void);
-void PendSV_Handler(void);
-void SysTick_Handler(void);
+/* Includes ------------------------------------------------------------------*/
+#include "air001xx_ll_rcc.h"
+#include "air001xx_ll_bus.h"
+#include "air001xx_ll_system.h"
+#include "air001xx_ll_exti.h"
+#include "air001xx_ll_cortex.h"
+#include "air001xx_ll_utils.h"
+#include "air001xx_ll_pwr.h"
+#include "air001xx_ll_dma.h"
+#include "air001xx_ll_gpio.h"
 
-void DMA1_Channel1_IRQHandler(void);
+#if defined(USE_FULL_ASSERT)
+#include "air001_assert.h"
+#endif /* USE_FULL_ASSERT */
+
+/* Private includes ----------------------------------------------------------*/
+/* Private defines -----------------------------------------------------------*/
+/* Exported variables prototypes ---------------------------------------------*/
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __AIR001XX_IT_H */
+#endif /* __MAIN_H */
 
 /************************ (C) COPYRIGHT AirM2M *****END OF FILE******************/

@@ -22,8 +22,8 @@
 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __PY32F0XX_IT_H
-#define __PY32F0XX_IT_H
+#ifndef __AIR001XX_IT_H
+#define __AIR001XX_IT_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,6 +44,6 @@ void SysTick_Handler(void);
 }
 #endif
 
-#endif /* __PY32F0XX_IT_H */
+#endif /* __AIR001XX_IT_H */
 
 /************************ (C) COPYRIGHT AirM2M *****END OF FILE******************/
