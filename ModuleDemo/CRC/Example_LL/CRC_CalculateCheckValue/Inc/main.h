@@ -30,7 +30,6 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-
 #include "air001xx_ll_rcc.h"
 #include "air001xx_ll_bus.h"
 #include "air001xx_ll_system.h"
@@ -39,7 +38,7 @@ extern "C" {
 #include "air001xx_ll_pwr.h"
 #include "air001xx_ll_dma.h"
 #include "air001xx_ll_gpio.h"
-#include "air001xx_ll_adc.h"
+#include "air001xx_ll_crc.h"
 
 #if defined(USE_FULL_ASSERT)
 #include "air001_assert.h"

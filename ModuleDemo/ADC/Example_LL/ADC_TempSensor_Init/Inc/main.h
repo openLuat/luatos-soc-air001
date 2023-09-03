@@ -42,7 +42,7 @@ extern "C" {
 #include "air001xx_ll_adc.h"
 
 #if defined(USE_FULL_ASSERT)
-#include "py32_assert.h"
+#include "air001_assert.h"
 #endif /* USE_FULL_ASSERT */
 
 /* Private includes ----------------------------------------------------------*/

@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
-  * @file    py32_assert.h
-  * @brief   PY32 assert file.
+  * @file    air001_assert.h
+  * @brief   AIR001 assert file.
   ******************************************************************************
   * @attention
   *
@@ -20,8 +20,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __PY32_ASSERT_H
-#define __PY32_ASSERT_H
+#ifndef __AIR001_ASSERT_H
+#define __AIR001_ASSERT_H
 
 #ifdef __cplusplus
  extern "C" {
@@ -54,6 +54,6 @@
 }
 #endif
 
-#endif /* __PY32_ASSERT_H */
+#endif /* __AIR001_ASSERT_H */
 
 /************************ (C) COPYRIGHT AirM2M *****END OF FILE******************/

@@ -1,9 +1,8 @@
 /**
   ******************************************************************************
-  * @file    main.h
+  * @file    air001xx_it.h
   * @author  MCU Application Team
-  * @brief   Header for main.c file.
-  *          This file contains the common defines of the application.
+  * @brief   This file contains the headers of the interrupt handlers.
   ******************************************************************************
   * @attention
   *
@@ -21,40 +20,30 @@
   ******************************************************************************
   */
 
+
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef __PY32F0XX_IT_H
+#define __PY32F0XX_IT_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/* Includes ------------------------------------------------------------------*/
-
-#include "air001xx_ll_rcc.h"
-#include "air001xx_ll_bus.h"
-#include "air001xx_ll_system.h"
-#include "air001xx_ll_cortex.h"
-#include "air001xx_ll_utils.h"
-#include "air001xx_ll_pwr.h"
-#include "air001xx_ll_dma.h"
-#include "air001xx_ll_gpio.h"
-#include "air001xx_ll_adc.h"
-
-#if defined(USE_FULL_ASSERT)
-#include "air001_assert.h"
-#endif /* USE_FULL_ASSERT */
-
 /* Private includes ----------------------------------------------------------*/
-/* Private defines -----------------------------------------------------------*/
-/* Exported variables prototypes ---------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* Exported macro ------------------------------------------------------------*/
 /* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+void NMI_Handler(void);
+void HardFault_Handler(void);
+void SVC_Handler(void);
+void PendSV_Handler(void);
+void SysTick_Handler(void);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __MAIN_H */
+#endif /* __PY32F0XX_IT_H */
 
 /************************ (C) COPYRIGHT AirM2M *****END OF FILE******************/
