@@ -53,6 +53,7 @@ void BSP_LED_Init(Led_TypeDef Led)
   /* LL_GPIO_SetPinPull(LED_PORT[Led], LED_PIN[Led], LL_GPIO_PULL_NO);               */
 
   LL_GPIO_SetOutputPin(LED_PORT[Led], LED_PIN[Led]);
+  LL_GPIO_ResetOutputPin(LED_PORT[Led], LED_PIN[Led]);
 }
 
 /**
@@ -83,7 +84,7 @@ void BSP_LED_DeInit(Led_TypeDef Led)
  */
 void BSP_LED_On(Led_TypeDef Led)
 {
-  LL_GPIO_ResetOutputPin(LED_PORT[Led], LED_PIN[Led]);
+  LL_GPIO_SetOutputPin(LED_PORT[Led], LED_PIN[Led]);
 }
 
 /**
@@ -95,7 +96,7 @@ void BSP_LED_On(Led_TypeDef Led)
  */
 void BSP_LED_Off(Led_TypeDef Led)
 {
-  LL_GPIO_SetOutputPin(LED_PORT[Led], LED_PIN[Led]);
+  LL_GPIO_ResetOutputPin(LED_PORT[Led], LED_PIN[Led]);
 }
 
 /**
