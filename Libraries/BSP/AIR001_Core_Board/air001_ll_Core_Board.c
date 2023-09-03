@@ -9,8 +9,8 @@
 #define __AIR001_CORE_BOARD_BSP_VERSION_RC (0x00U)   /*!< [7:0]  release candidate */
 #define __AIR001_CORE_BOARD_BSP_VERSION ((__AIR001_CORE_BOARD_BSP_VERSION_MAIN << 24) | (__AIR001_CORE_BOARD_BSP_VERSION_SUB1 << 16) | (__AIR001_CORE_BOARD_BSP_VERSION_SUB2 << 8) | (__AIR001_CORE_BOARD_BSP_VERSION_RC))
 
-GPIO_TypeDef *LED_PORT[LEDn] = {LED3_GPIO_PORT};
-const uint16_t LED_PIN[LEDn] = {LED3_PIN};
+GPIO_TypeDef *LED_PORT[LEDn] = {LED1_GPIO_PORT};
+const uint16_t LED_PIN[LEDn] = {LED1_PIN};
 
 GPIO_TypeDef *BUTTON_PORT[BUTTONn] = {USER_BUTTON_GPIO_PORT};
 const uint16_t BUTTON_PIN[BUTTONn] = {USER_BUTTON_PIN};
@@ -207,6 +207,7 @@ void BSP_USART_Config(void)
 }
 
 #if (defined(__CC_ARM)) || (defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))
+
 /**
  * @brief 写一个字符到usart中。
  *@param ch
