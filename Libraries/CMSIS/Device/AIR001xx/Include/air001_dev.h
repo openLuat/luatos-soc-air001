@@ -468,14 +468,14 @@ typedef struct
   * @{
   */
 #define FLASH_BASE            (0x08000000UL)  /*!< FLASH base address */
-#define FLASH_END             (0x0800FFFFUL)  /*!< FLASH end address */
+#define FLASH_END             (0x08007FFFUL)  /*!< FLASH end address */
 #define FLASH_SIZE            (FLASH_END - FLASH_BASE + 1)
 #define FLASH_PAGE_SIZE       0x00000080U     /*!< FLASH Page Size, 128 Bytes */
 #define FLASH_PAGE_NB         (FLASH_SIZE / FLASH_PAGE_SIZE)
 #define FLASH_SECTOR_SIZE     0x00001000U     /*!< FLASH Sector Size, 4096 Bytes */
 #define FLASH_SECTOR_NB       (FLASH_SIZE / FLASH_SECTOR_SIZE)
 #define SRAM_BASE             (0x20000000UL)  /*!< SRAM base address */
-#define SRAM_END              (0x20001FFFUL)  /*!< SRAM end address */
+#define SRAM_END              (0x20000FFFUL)  /*!< SRAM end address */
 #define PERIPH_BASE           (0x40000000UL)  /*!< Peripheral base address */
 #define IOPORT_BASE           (0x50000000UL)  /*!< IOPORT base address */
 
