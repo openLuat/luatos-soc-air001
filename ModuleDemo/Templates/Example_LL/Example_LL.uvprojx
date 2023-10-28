@@ -15,8 +15,8 @@
       <TargetOption>
         <TargetCommonOption>
           <Device>AIR001Dev</Device>
-          <Vendor>AirM2M</Vendor>
-          <PackID>AirM2M.AIR001xx_DFP.1.0.0</PackID>
+          <Vendor>Generic</Vendor>
+          <PackID>Keil.AIR001_DFP.1.1.1</PackID>
           <PackURL>https://luatos.com/t/air001/</PackURL>
           <Cpu>IRAM(0x20000000,0x00001000) IROM(0x08000000,0x00008000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -329,8 +329,8 @@
             <uC99>1</uC99>
             <uGnu>1</uGnu>
             <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
-            <v6LangP>1</v6LangP>
+            <v6Lang>3</v6Lang>
+            <v6LangP>6</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
@@ -425,8 +425,8 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="Startup" Cvendor="AirM2M" Cversion="0.0.1" condition="AIR001 CMSIS">
-        <package name="AIR001xx_DFP" schemaVersion="1.0" url="https://luatos.com/t/air001/" vendor="AirM2M" version="1.0.0"/>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="0.0.1" condition="AIR001 CMSIS">
+        <package name="AIR001_DFP" schemaVersion="1.2" url="https://luatos.com/t/air001/" vendor="Keil" version="1.1.1"/>
         <targetInfos>
           <targetInfo name="Target 1"/>
         </targetInfos>
@@ -435,16 +435,16 @@
     <files>
       <file attr="config" category="source" condition="AIR001Dev ARMCC" name="Device\Source\ARM\startup_air001_dev.s" version="0.0.1">
         <instance index="0">RTE\Device\AIR001Dev\startup_air001_dev.s</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="AirM2M" Cversion="0.0.1" condition="AIR001 CMSIS"/>
-        <package name="AIR001xx_DFP" schemaVersion="1.0" url="https://luatos.com/t/air001/" vendor="AirM2M" version="1.0.0"/>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="0.0.1" condition="AIR001 CMSIS"/>
+        <package name="AIR001_DFP" schemaVersion="1.2" url="https://luatos.com/t/air001/" vendor="Keil" version="1.1.1"/>
         <targetInfos>
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\Source\system_air001xx.c" version="0.0.1">
         <instance index="0">RTE\Device\AIR001Dev\system_air001xx.c</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="AirM2M" Cversion="0.0.1" condition="AIR001 CMSIS"/>
-        <package name="AIR001xx_DFP" schemaVersion="1.0" url="https://luatos.com/t/air001/" vendor="AirM2M" version="1.0.0"/>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="0.0.1" condition="AIR001 CMSIS"/>
+        <package name="AIR001_DFP" schemaVersion="1.2" url="https://luatos.com/t/air001/" vendor="Keil" version="1.1.1"/>
         <targetInfos>
           <targetInfo name="Target 1"/>
         </targetInfos>
